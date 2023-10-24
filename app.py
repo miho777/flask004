@@ -13,4 +13,4 @@ def home():
     #return render_template('default.html',url="home")
 ##### Run the Flask instance, browse to http://<< Host IP or URL >>:5000 #####
 if __name__ == "__main__":
-	app.run(debug=False, host='0.0.0.0', port=int(os.getenv('PORT', '5000')), threaded=True)
+	app.run(host='0.0.0.0', port=int(os.getenv('PORT', '5000')))
