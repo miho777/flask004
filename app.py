@@ -8,7 +8,7 @@ app = Flask(__name__)
 ##### Define routes #####
 @app.route('/')
 def home(): 
-    RET_TEXT = 'Hello, World! ' + os.getenv('AAA','DefaultAAA')
+    RET_TEXT = 'Hello, World! ' + os.getenv('AAA','DefaultSSSS-AAA')
     return RET_TEXT
     #return 'Hello, World!' 
     ### Using template
