@@ -2,5 +2,5 @@ Flask
 Gunicorn
 pip
 boto3==1.13.17
-Pillow==7.1.2
+Pillow
 pymongo==3.10.1
