@@ -3,6 +3,7 @@
 # Import modules required for app
 import os
 from datetime import datetime
+import subprocess
 from flask import Flask, render_template, request
 ##### Create a Flask instance
 app = Flask(__name__)
@@ -15,9 +16,15 @@ def home():
     # 時刻を24時間表記の文字列にフォーマット
     time_24hr = now.strftime('%H:%M:%S')
     # POD nameを取得
-    pod_name = request.headers.get('Pod-Name', 'Unknown Pod')
+    # pod_name = request.headers.get('Pod-Name', 'Unknown Pod')
+    args = ['uname', '-a']
+    try:
+        res = subprocess.check_output(args)
+        print (res)
+    except:
+        print ("Error.")
 
-    RET_TEXT = time_24hr + ' Hello, World! ' + pod_name
+    RET_TEXT = time_24hr + ' Hello, World! ' + str(res)
     return RET_TEXT
     #return 'Hello, World!' 
     ### Using template
